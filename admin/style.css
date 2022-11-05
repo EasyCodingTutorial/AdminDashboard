@@ -1,0 +1,247 @@
+@import url("https://fonts.googleapis.com/css2?family=Besley:ital,wght@0,400;1,400;1,500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Besley", serif;
+  border: none;
+  outline: none;
+  text-decoration: none;
+  transition: 0.2s all linear;
+}
+::-webkit-scrollbar {
+  width: 3px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--main);
+}
+::-webkit-scrollbar-track {
+  background: #000;
+}
+*::selection {
+  background: var(--main);
+  color: #000;
+}
+:root {
+  --main: #0631a9;
+  --box_shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.9);
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  background: #fff;
+  box-shadow: var(--box_shadow);
+  padding: 0 20px;
+  height: 60px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 2fr 10fr 0.5fr 1fr;
+  align-items: center;
+  z-index: 1000;
+}
+.logo h2 {
+  color: var(--main);
+  cursor: pointer;
+}
+
+.SearchBox {
+  position: relative;
+  width: 60%;
+  justify-self: center;
+}
+.SearchBox input {
+  background: #ccc;
+  height: 40px;
+  width: 100%;
+  min-width: 128px;
+  padding: 0 40px;
+  border-radius: 10px;
+  font-size: 16px;
+}
+.SearchBox i {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+}
+.user {
+  position: relative;
+  height: 50px;
+  width: 50px;
+  justify-self: right;
+}
+img {
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+  object-fit: cover;
+}
+/* Navbar */
+
+/* SideBar */
+.SideBar {
+  position: fixed;
+  background: var(--main);
+  width: 260px;
+  top: 60px;
+  overflow-x: hidden;
+  height: calc(100% - 60px);
+  z-index: 10000;
+  box-shadow: var(--box_shadow);
+}
+.SearchBox ul {
+  margin-top: 20px;
+}
+.SideBar ul li {
+  width: 100%;
+}
+.SideBar ul li:hover {
+  background: #fff;
+}
+.SideBar ul li a {
+  color: #fff;
+  height: 60px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.SideBar ul li:hover a {
+  color: var(--main);
+}
+.SideBar ul li a i {
+  text-align: center;
+  font-size: 24px;
+  min-width: 60px;
+}
+
+/* SideBar */
+
+/* Main Content Start */
+.Main {
+  position: absolute;
+  top: 60px;
+  width: calc(100% - 260px);
+  min-height: calc(100vh - 60px);
+  left: 260px;
+  background: #f5f5f5;
+}
+.MainCard {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+  padding: 35px 20px;
+}
+.MainCard .Card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: var(--box_shadow);
+  transition: 0.1s;
+}
+.Card .num {
+  color: var(--main);
+  font-size: 35px;
+  font-weight: 500;
+}
+.Card .name {
+  font-weight: 600;
+  color: #222;
+}
+.Card i {
+  font-size: 45px;
+  color: var(--main);
+  cursor: pointer;
+}
+/* Main Content End */
+
+/* Chart */
+.MainChart {
+  display: flex;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 20px;
+  width: 100%;
+  padding: 20px;
+  padding-top: 0;
+}
+.MainChart .Chart {
+  background: #fff;
+  box-shadow: var(--box_shadow);
+  padding: 20px;
+  border-radius: 10px;
+  width: 100%;
+}
+.MainChart .Chart h1 {
+  color: #222;
+  text-align: center;
+  margin-bottom: 5px;
+  font-size: 20px;
+}
+
+/* Responsive */
+@media (max-width: 1115px) {
+  .SideBar {
+    width: 60px;
+  }
+  .Main {
+    left: 60px;
+    width: calc(100% - 60px);
+  }
+}
+
+@media (max-width: 800px) {
+  .fa-bell {
+    justify-self: left;
+  }
+  .MainCard {
+    padding: 35px 20px;
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+  }
+  .MainChart {
+    grid-template-columns: 1fr;
+  }
+  #doughnut {
+    padding: 50px;
+  }
+}
+@media (max-width: 500px) {
+  .navbar {
+    grid-template-columns: 1fr 5fr 0.4fr 1fr;
+  }
+  .logo h2 {
+    font-size: 20px;
+  }
+  .SearchBox {
+    width: 80%;
+  }
+  .SearchBox input {
+    padding: 0 20px;
+  }
+  .fa-bell {
+    margin-right: 5px;
+  }
+  .MainCard {
+    grid-template-columns: 1fr;
+  }
+  .doughnut-chart {
+    padding: 10px;
+  }
+  #doughnut {
+    padding: 0px;
+  }
+  .user {
+    height: 40px;
+    width: 40px;
+  }
+}
